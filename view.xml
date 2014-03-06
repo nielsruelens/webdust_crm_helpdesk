@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="crm_helpdesk.crm_case_tree_view_helpdesk"/>
             <field name="arch" type="xml">
                 <xpath expr="//tree[@string='Helpdesk Support Tree']" position="attributes">
-                    <attribute name="colors">black:state=='open';blue:state=='pending';gray:state in ('cancel','done');red:message_unread==True</attribute>
+                    <attribute name="colors">red:message_unread==True;black:state=='open';blue:state=='pending';gray:state in ('cancel','done')</attribute>
                 </xpath>
                 <field name="state" position="after">
                     <field name="message_unread" string="All read"/>
