@@ -21,8 +21,8 @@ class crm_helpdesk(osv.Model):
         result = super(crm_helpdesk,self).message_post(cr, uid, thread_id, body, subject, type,
                         subtype, parent_id, attachments, context, content_subtype, **kwargs)
 
-        case = self.browse(cr, uid, thread_id, context=context)
-        if case.state == 'done':
-            self.case_reset(cr, uid, [thread_id], context=context)
+        for case in self.browse(cr, uid, [thread_id], context=context):
+            if case.state == 'done':
+                self.case_reset(cr, uid, [case.id], context=context)
 
         return result
