@@ -2,6 +2,7 @@ from openerp.osv import osv
 from openerp.tools.translate import _
 from email.message import Message
 from openerp.addons.mail.mail_message import decode
+import email
 
 class mail_thread(osv.AbstractModel):
     _name = "mail.thread"
