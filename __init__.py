@@ -1,1 +1,2 @@
+import mail_thread
 import crm_helpdesk
